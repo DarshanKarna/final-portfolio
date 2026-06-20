@@ -32,8 +32,23 @@
     <div class="loader-text" id="loader-text">
       <span>AI Developer</span>
     </div>
-    <div class="loader-bar">
-      <div class="loader-bar-fill" id="loader-bar-fill"></div>
+    <!-- SVG filter for gooey effect -->
+    <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+      <defs>
+        <filter id="gooey-loader-filter">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 48 -7"
+            result="goo"
+          />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="gooey-loader-container">
+      <div class="gooey-loader"></div>
     </div>
   </div>
 

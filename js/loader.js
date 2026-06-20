@@ -6,7 +6,6 @@
   const loader = document.getElementById('loader');
   const counter = document.getElementById('loader-counter');
   const textEl = document.getElementById('loader-text');
-  const barFill = document.getElementById('loader-bar-fill');
 
   if (!loader || !counter) return;
 
@@ -48,7 +47,6 @@
     easing: 'easeInOutQuart',
     update: () => {
       counter.textContent = counterObj.value;
-      barFill.style.width = counterObj.value + '%';
 
       // Cycle text at specific percentages
       if (counterObj.value >= 25 && roleIndex === 0) cycleText();
