@@ -18,3 +18,5 @@ desktop.ini
 # Gemini agent data
 .gemini/
 .agents/
+.codex/
+skills-lock.json
