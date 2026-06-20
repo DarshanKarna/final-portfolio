@@ -41,19 +41,33 @@
 }
 
 .loader-bar {
-  width: 120px;
-  height: 2px;
-  background: var(--color-border);
+  width: min(60vw, 320px);
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-full);
-  overflow: hidden;
-  margin-top: var(--space-sm);
+  margin-top: var(--space-md);
+  position: relative;
 }
 
 .loader-bar-fill {
   height: 100%;
   width: 0%;
-  background: var(--color-accent);
+  background: linear-gradient(90deg, transparent, var(--color-accent));
   border-radius: var(--radius-full);
+  position: relative;
+  box-shadow: 0 0 15px var(--color-accent-glow);
+}
+
+.loader-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 4px var(--color-accent);
 }
 
 /* ══════════════ HERO ══════════════ */
