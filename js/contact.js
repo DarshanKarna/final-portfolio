@@ -25,14 +25,32 @@
     submitBtn.disabled = true;
     submitBtn.style.opacity = '0.6';
 
-    // Note: Formspree handles the actual submission and redirect.
-    // If using JS fetch instead:
-    // e.preventDefault();
-    // fetch(form.action, {
-    //   method: 'POST',
-    //   body: new FormData(form),
-    //   headers: { 'Accept': 'application/json' },
-    // }).then(res => { ... });
+    // FormSubmit handles the actual submission via AJAX
+    e.preventDefault();
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' },
+    }).then(res => {
+      if (res.ok) {
+        submitBtn.textContent = 'Message Sent!';
+        form.reset();
+      } else {
+        submitBtn.textContent = 'Failed to Send';
+      }
+      setTimeout(() => {
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+      }, 3000);
+    }).catch(err => {
+      submitBtn.textContent = 'Failed to Send';
+      setTimeout(() => {
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+      }, 3000);
+    });
   });
 
   // Magnetic button effect
