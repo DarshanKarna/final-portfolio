@@ -33,7 +33,7 @@
   window.addEventListener('loaderComplete', startObserving);
 
   // Fallback if loader is already done
-  if (document.getElementById('loader')?.style.display === 'none') {
+  if (document.getElementById('x-loader')?.style.display === 'none') {
     startObserving();
   }
 
