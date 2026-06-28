@@ -96,6 +96,7 @@
       align-items: center;
       justify-content: center;
       pointer-events: none;
+      z-index: 2;
     }
 
     .xl-x {
@@ -110,11 +111,10 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      opacity: 0;
+      opacity: 1;
       transform: scale(1);
       transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
     }
-    .xl-x.visible { opacity: 1; }
     .xl-x.morph   { transform: scale(3); opacity: 0; }
 
     .xl-circle {
