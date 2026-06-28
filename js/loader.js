@@ -27,11 +27,6 @@
     phase1.classList.add('fade-out');
   }, 2000);
 
-  /* ── t=2.8s — Show single X with photo bleed ── */
-  setTimeout(function () {
-    xChar.classList.add('visible');
-  }, 2800);
-
   /* ── t=3.3s — X morphs: scale up + fade out ── */
   setTimeout(function () {
     xChar.classList.add('morph');
